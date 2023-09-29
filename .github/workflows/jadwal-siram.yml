@@ -20,9 +20,18 @@ jobs:
 
     - name: Aktifkan Relay
       run: |
-        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=hsoqoqt9FAJb7B_CkMv9qHe5ei94zPUp&v1=1"
+	  
+        # Mengaktifkan relay
+        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=vQ_8kZRKKa4wihusUipdQzdnpYUsK5fY&v1=1"
         
-        # Menambahkan penundaan selama 20 detik menggunakan JavaScript
-        node -e "setTimeout(() => {}, 20000)"
+	- name: Wait for 20 Seconds
+      uses: softprops/action-sleep@v1
+      with:
+        seconds: 20
         
-        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=hsoqoqt9FAJb7B_CkMv9qHe5ei94zPUp&v1=0"
+    - name: Matikan Relay
+      run: |
+        
+        # Mematikan relay
+        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=vQ_8kZRKKa4wihusUipdQzdnpYUsK5fY&v1=0"
+
