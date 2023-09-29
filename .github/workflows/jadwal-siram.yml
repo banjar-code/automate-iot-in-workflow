@@ -2,7 +2,7 @@ name: RelayControl
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Menjalankan setiap satu jam
+    - cron: '0 * * * *'  
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
     - name: AktifkanRelay
       run: |
         curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=vQ_8kZRKKa4wihusUipdQzdnpYUsK5fY&v1=1"
-      timeout: 20s  # Tunggu selama 20 detik sebelum langkah berikutnya
+        sleep 20 
 
     - name: MatikanRelay
       run: |
