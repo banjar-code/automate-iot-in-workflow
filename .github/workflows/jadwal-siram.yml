@@ -20,18 +20,21 @@ jobs:
 
     - name: Aktifkan Relay
       run: |
-	  
-        # Mengaktifkan relay
-        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=vQ_8kZRKKa4wihusUipdQzdnpYUsK5fY&v1=1"
+        # Menggunakan variabel lingkungan untuk token API
+        TOKEN="$TOKEN_API"
         
-	- name: Wait for 20 Seconds
+        # Mengaktifkan relay
+        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=$TOKEN&v1=1"
+        
+    - name: Wait for 20 Seconds
       uses: softprops/action-sleep@v1
       with:
         seconds: 20
         
     - name: Matikan Relay
       run: |
+        # Menggunakan variabel lingkungan untuk token API
+        TOKEN="$TOKEN_API"
         
         # Mematikan relay
-        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=vQ_8kZRKKa4wihusUipdQzdnpYUsK5fY&v1=0"
-
+        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=$TOKEN&v1=0"
