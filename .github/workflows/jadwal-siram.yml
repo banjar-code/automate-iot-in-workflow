@@ -2,7 +2,7 @@ name: Relay Control
 
 on:
   schedule:
-    - cron: '* * * * *'  # Menjalankan setiap satu menit
+    - cron: '0 * * * *'  # Menjalankan setiap satu menit
   workflow_dispatch:
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
     - name: Tunggu 20 Detik
       run: |
         # Tambahkan penundaan selama 20 detik
-        sleep 10
+        sleep 20
         
     - name: Matikan Relay
       run: |
