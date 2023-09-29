@@ -1,0 +1,23 @@
+name: RelayControl
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Menjalankan setiap satu jam
+  workflow_dispatch:
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkoutkode
+      uses: actions/checkout@v2
+
+    - name: AktifkanRelay
+      run: |
+        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=vQ_8kZRKKa4wihusUipdQzdnpYUsK5fY&v1=1"
+      timeout: 20s  # Tunggu selama 20 detik sebelum langkah berikutnya
+
+    - name: MatikanRelay
+      run: |
+        curl -X POST "https://sgp1.blynk.cloud/external/api/update?token=vQ_8kZRKKa4wihusUipdQzdnpYUsK5fY&v1=0"
