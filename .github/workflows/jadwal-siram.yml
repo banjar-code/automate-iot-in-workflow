@@ -20,11 +20,9 @@ jobs:
 
     - name: Aktifkan Relay
       run: |
-        # Menggunakan variabel lingkungan untuk token API
-        TOKEN="$TOKEN_API"
         
         # Mengaktifkan relay
-        curl -X GET "https://sgp1.blynk.cloud/external/api/update?token=$TOKEN&v1=1"
+        curl -X GET "https://sgp1.blynk.cloud/external/api/update?token=vQ_8kZRKKa4wihusUipdQzdnpYUsK5fY&v1=1"
         
     - name: Tunggu 20 Detik
       run: |
@@ -33,8 +31,5 @@ jobs:
         
     - name: Matikan Relay
       run: |
-        # Menggunakan variabel lingkungan untuk token API
-        TOKEN="$TOKEN_API"
-        
         # Mematikan relay
-        curl -X GET "https://sgp1.blynk.cloud/external/api/update?token=$TOKEN&v1=0"
+        curl -X GET "https://sgp1.blynk.cloud/external/api/update?token=vQ_8kZRKKa4wihusUipdQzdnpYUsK5fY&v1=0"
