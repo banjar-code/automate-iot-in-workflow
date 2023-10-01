@@ -33,3 +33,25 @@ jobs:
       run: |
         # Mematikan relay
         curl -X GET "https://sgp1.blynk.cloud/external/api/update?token=43orXhCWbYDNa8_a6ebTt6sXEW1ks1C_&v1=0"
+
+    - name: Tunggu 1 Jam
+      run: |
+        # Tambahkan penundaan selama 1 Jam
+        sleep 3600
+
+    - name: Aktifkan Relay2 
+      run: |
+        
+        # Mengaktifkan relay
+        curl -X GET "https://sgp1.blynk.cloud/external/api/update?token=43orXhCWbYDNa8_a6ebTt6sXEW1ks1C_&v1=1"
+
+    - name: Tunggu 5 Detik
+      run: |
+        # Tambahkan penundaan selama 5 detik
+        sleep 5
+
+    - name: Matikan Relay2
+      run: |
+        # Mematikan relay
+        curl -X GET "https://sgp1.blynk.cloud/external/api/update?token=43orXhCWbYDNa8_a6ebTt6sXEW1ks1C_&v1=0"
+  
